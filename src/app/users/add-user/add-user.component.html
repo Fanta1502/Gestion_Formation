@@ -1,0 +1,57 @@
+<div class="centre">
+    <mat-card class="card">
+        <mat-card-title>
+            Ajout d'un nouveau utilisateur
+        </mat-card-title><br><br>
+        <form class="form" (ngSubmit)="saveFormData(regiterForm)" #regiterForm="ngForm">  
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Login</mat-label>
+                <input matInput type="text" name="login" id="login" [(ngModel)]="user.login" required>
+              </mat-form-field>
+            <table class="example-full-width" cellspacing="0"><tr>
+              <td>
+                <mat-form-field appearance="fill">
+                  <mat-label>Entre votre mot de passe</mat-label>
+                  <input matInput [type]="hide ? 'password' : 'text'" name="password" id="password" [(ngModel)]="user.password" required>
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field></td>
+              <td> <mat-form-field appearance="fill">
+                <mat-label>Confirmer votre mot de passe</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" name="password2" id="password2">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field></td>
+            </tr></table>
+          
+            <table class="example-full-width" cellspacing="0"><tr>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Nom et Prénom</mat-label>
+                <input matInput type="text" name="nom" id="nom" [(ngModel)]="user.nom" required>
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>CIN</mat-label>
+                <input matInput name="cin" id="cin" [(ngModel)]="user.cin" required>
+              </mat-form-field></td>
+            </tr></table>
+            <table class="example-full-width" cellspacing="0"><tr>
+                <td><mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Date de Naissance</mat-label>
+                  <input matInput type="date" name="date_naiss" id="date_naiss" [(ngModel)]="user.date_naiss"  required>
+                </mat-form-field></td>
+                <td><mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>E-mail</mat-label>
+                  <input matInput type="email" name="email" id="email" [(ngModel)]="user.email" required>
+                </mat-form-field></td>
+              </tr></table>
+              <br>
+              <div>
+                  <button type="submit" mat-raised-button color="primary"> Ajouter</button>
+              </div>
+          </form>
+    </mat-card>
+</div>

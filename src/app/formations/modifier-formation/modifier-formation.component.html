@@ -1,0 +1,28 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<h1 class="text-center">Gestion des Formations</h1>
+<form  (ngSubmit)="saveFormData(regiterForm)" class="form" #regiterForm="ngForm">
+    <div class="container">
+        Intitulé : <input type="text" name="intitule" id="intitule" class="form-control" [(ngModel)]="formation.intitule" disabled>
+    Description : <input type="text" name="description" id="description" class="form-control" [(ngModel)]="formation.description" >
+    <div class="row">
+        <div class="col">
+            Date : <input type="date" name="date" id="date" class="form-control" [(ngModel)]="formation.dateform">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Nombre de place : <input type="number" name="nbPlace" id="nbPlace" class="form-control" [(ngModel)]="formation.nbPlace" disabled>
+        </div>
+        <div class="col">
+            Nombre de Reservation : <input type="number" name="nbReservation" id="nbReservation" class="form-control" [(ngModel)]="formation.nbReservation">
+        </div>
+        <div class="col">
+            Prix : <input type="number" name="prix" id="prix" class="form-control" [(ngModel)]="formation.prix">
+        </div>
+    </div>
+    <br>
+    <div class="text-center">
+        <button class="btn btn-secondary"> Modifier </button>
+    </div>
+    </div>
+</form>

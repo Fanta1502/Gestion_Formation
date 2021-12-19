@@ -1,0 +1,27 @@
+<div fxLayout="column" fxLayoutGap="10px">
+    <div fxFlex>
+        <br>
+        <button  mat-raised-button color="warn" (click)="addReservation()">AJouter une Formation</button>
+    </div>
+    <br>
+    <table fxFlex>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Etat</th>
+                <th>Utilisateur</th>
+                <th>Formation</th>
+            </tr>
+        </thead>
+        <tbody class="centre">
+            <tr *ngFor="let reservation of reservations">
+                <td>{{ reservation.id }}</td>
+                <td>{{ reservation.etat }} </td>
+                <td>{{ reservation.util.nom}}</td>
+                <td>{{ reservation.form.intitule }}</td>
+                <td><button mat-raised-button>Modifier</button></td>
+                <td><button mat-raised-button color="accent">Supprimer</button></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
